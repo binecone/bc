@@ -135,7 +135,7 @@ function App() {
               Txn hash:{" "}
               <a
                 className="text-blue-500"
-                href={"https://hyperspace.filfox.info/en/tx/" + txnHash}
+                href={"https://calibnet.filfox.info/en/tx/" + txnHash}
                 target="_blank"
                 rel="noopener noreferrer"
               >
