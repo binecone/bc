@@ -87,7 +87,7 @@ function App() {
       {/* Metamask status */}
       <div className="text-center">
         {getNetwork != "3141"
-          ? "Filecoin FVM Calibratiopn network."
+          ? "Filecoin FVM Calibration network."
           : mmStatus}
       </div>
       <hr />
@@ -143,7 +143,7 @@ function App() {
               </a>
             </p>
             <p className="mt-2 text-xs">
-              Please wait till the Txn is completed :)
+              Please wait till the transaction is completed...
             </p>
           </>
         ) : (
