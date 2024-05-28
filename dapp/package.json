@@ -1,17 +1,20 @@
 {
-  "name": "create-fvm-dapp",
-  "version": "1.0.3",
-  "description": "A full-stack starter template with React & Hardhat to develop, deploy, and test Solidity smart contracts on the FEVM network.",
+  "name": "Binecone",
+  "version": "0.0.1",
+  "description": "Blockchain Vector Database.",
   "bin": "./bin/index.js",
-  "author": "Akhilesh Thite",
+  "author": "Binecone",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/akhileshthite/create-fvm-dapp"
+    "url": "https://github.com/binecone"
   },
   "keywords": [
     "fvm",
     "filecoin",
+    "vector",
+    "database",
+    "binecone",
     "react",
     "hardhat",
     "web3.storage",
