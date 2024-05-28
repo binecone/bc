@@ -17,7 +17,7 @@ module.exports = {
   networks: {
     calibnet: {
       chainId: 314159,
-      url: "https://api.calibnation.node.glif.io/rpc/v0",
+      url: "https://api.calibration.node.glif.io/rpc/v0",
       accounts: [PRIVATE_KEY ?? "undefined"],
     },
     filecoin_mainnet: {
