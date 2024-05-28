@@ -13,11 +13,11 @@ module.exports = {
       },
     },
   },
-  defaultNetwork: "hyperspace",
+  defaultNetwork: "calibnet",
   networks: {
-    hyperspace: {
-      chainId: 3141,
-      url: "https://api.hyperspace.node.glif.io/rpc/v1",
+    calibnet: {
+      chainId: 314159,
+      url: "https://api.calibnation.node.glif.io/rpc/v0",
       accounts: [PRIVATE_KEY ?? "undefined"],
     },
     filecoin_mainnet: {
