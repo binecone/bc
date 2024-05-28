@@ -29,7 +29,7 @@ function App() {
       const networkId = await web3.eth.getChainId();
       setGetNetwork(networkId);
       // INSERT deployed smart contract address
-      const contract = "0x932E33DC70ecA01F597aa0c58F2fe58228f37F58";
+      const contract = "0xAd7af8B11AFae25D38006b805Abb2D59df941A4D";
       setContractAddress(contract);
       // Instantiate smart contract instance
       const Greeter = new web3.eth.Contract(contractJson.abi, contract);
@@ -87,12 +87,12 @@ function App() {
       {/* Metamask status */}
       <div className="text-center">
         {getNetwork != "3141"
-          ? "Please make sure you're on the Filecoin Hyperspace network"
+          ? "Filecoin FVM Calibratiopn network."
           : mmStatus}
       </div>
       <hr />
       <h1 className="text-center text-4xl font-bold mt-8">
-        create-fvm-dapp template 🚀
+      🍃 Binecone 🌿
       </h1>
       {/* Connect to Metamask */}
       <center>
@@ -109,7 +109,7 @@ function App() {
       <center className="mt-12">
         <input
           type={"text"}
-          placeholder={"Enter message"}
+          placeholder={"Input data"}
           id="message"
           className="w-60 bg-white rounded border border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-white focus:border-indigo-500 text-base outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out"
         />
@@ -117,14 +117,14 @@ function App() {
           className="text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded ml-3"
           onClick={isConnected && send}
         >
-          Send
+          Store
         </button>
         {/* Receive message */}
         <button
           className="text-center  bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded ml-3"
           onClick={isConnected && receive}
         >
-          Receive
+          Search
         </button>
       </center>
       <p className="text-center text-sm mt-6">
@@ -135,7 +135,7 @@ function App() {
               Txn hash:{" "}
               <a
                 className="text-blue-500"
-                href={"https://calibnet.filfox.info/en/tx/" + txnHash}
+                href={"https://calibration.filfox.info/en/tx/" + txnHash}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -156,12 +156,12 @@ function App() {
       </div>
       {/* Footer FVM content */}
       <footer className="footer">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p className="mt-4 text-xs sm:text-sm text-black">
-          Learn more about Filecoin Virtual Machine {""}
+          Learn more about Binecone {""}
           <a
             className="text-blue-500 no-underline hover:underline hover:text-blue-400"
-            href="https://fvm.filecoin.io/"
+            href="https://binecone.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
