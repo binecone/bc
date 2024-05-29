@@ -70,7 +70,7 @@ Also, make changes in `./scripts/deploy.js`
 For deploying the smart contracts to FEVM network, type the following command:
 
 ```sh
-npx hardhat run --network caliberation scripts/deploy.js
+npx hardhat run --network calibnet scripts/deploy.js
 
 # mainnet: npx hardhat run --network filecoin_mainnet scripts/deploy.js
 ```
