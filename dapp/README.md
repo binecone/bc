@@ -4,6 +4,21 @@
 
 <h1 align="center">Binecone dApp</h1>
 
+# Binecone
+
+Binecone - Blockchain Vector Database
+
+[DATA] -> [IPC, FVM] -> [Vector DB]
+
+## Binecone project progress
+
+Idea concept -> Website -> FVM dapp
+
+### Service website is completed. 
+
+### Please check [Binecone](https://binecone.com)
+
+
 Binecone dApp with React & Hardhat to develop, deploy, and test Solidity smart contracts on the FEVM network.
 
 ## Quickstart
