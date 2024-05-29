@@ -1,4 +1,4 @@
-p align="center">
+<p align="center">
     <img align="center" src="/src/logo.png" width="175"></img>
 </p>
 
@@ -61,7 +61,7 @@ npx hardhat run --network caliberation scripts/deploy.js
 Copy-paste the deployed contract address:
 
 ```sh
-📜 Contract deployed to: 0x...
+Contract deployed to: 0x...
 ```
 
 ### React client
