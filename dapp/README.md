@@ -4,20 +4,22 @@
 
 <h1 align="center">Binecone dApp</h1>
 
-# Binecone
+## What is Binecone?
 
-Binecone - Blockchain Vector Database
+Binecone - Blockchain based Vector Database.
+
+- Architecture
 
 [DATA] -> [IPC, FVM] -> [Vector DB]
 
 ## Binecone project progress
 
-Idea concept -> Website -> FVM dapp
+- Idea concept -> Website -> FVM dapp
 
-### Service website is completed. 
+- Service website is completed. 
+  Please check [Binecone](https://binecone.com)
 
-### Please check [Binecone](https://binecone.com)
-
+## How it works
 
 Binecone dApp with React & Hardhat to develop, deploy, and test Solidity smart contracts on the FEVM network.
 
