@@ -29,7 +29,7 @@ function App() {
       const networkId = await web3.eth.getChainId();
       setGetNetwork(networkId);
       // INSERT deployed smart contract address
-      const contract = "0xAd7af8B11AFae25D38006b805Abb2D59df941A4D";
+      const contract = "0x1620364d567731eb7D1190b2b4d29197a1c65e9c";
       setContractAddress(contract);
       // Instantiate smart contract instance
       const Greeter = new web3.eth.Contract(contractJson.abi, contract);

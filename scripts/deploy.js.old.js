@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 
 async function main() {
-  const Binecone = await hre.ethers.getContractFactory("Binecone");
+  const Greeter = await hre.ethers.getContractFactory("Greeter");
 
   // "HardhatError: HH303: Unrecognized task callRPC"
   // const priorityFee = await hre.run('callRPC', {
@@ -9,13 +9,13 @@ async function main() {
   //   params: [],
   // });
 
-  const binecone = await Binecone.deploy({
+  const greeter = await Greeter.deploy({
     maxPriorityFeePerGas: 199992,
   });
 
-  await binecone.deployed();
+  await greeter.deployed();
 
-  console.log("Contract deployed to:", binecone.address);
+  console.log("📜 Contract deployed to:", greeter.address);
 }
 
 main()
