@@ -6,7 +6,7 @@ import logo from "./logo.png";
 import "./App.css";
 // import { Web3Storage } from "web3.storage";
 // JSON containing ABI and Bytecode of compiled smart contracts
-import contractJson from "./artifacts/contracts/Greeter.sol/Greeter.json";
+import contractJson from "./artifacts/contracts/Binecone.sol/Binecone.json";
 
 function App() {
   const [mmStatus, setMmStatus] = useState("Not connected!");
@@ -20,6 +20,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [txnHash, setTxnHash] = useState(null);
 
+  const tf = require('@tensorflow/tfjs');
+  const words = ['I', 'am', 'a', 'developer'];
+
   useEffect(() => {
     (async () => {
       // Define web3
@@ -29,13 +32,13 @@ function App() {
       const networkId = await web3.eth.getChainId();
       setGetNetwork(networkId);
       // INSERT deployed smart contract address
-      const contract = "0x1620364d567731eb7D1190b2b4d29197a1c65e9c";
+      const contract = "0xeA35767250a94B22aB54a3D9f9b04F3A28FBd939";
       setContractAddress(contract);
       // Instantiate smart contract instance
-      const Greeter = new web3.eth.Contract(contractJson.abi, contract);
-      setContracts(Greeter);
+      const Binecone = new web3.eth.Contract(contractJson.abi, contract);
+      setContracts(Binecone);
       // Set provider
-      Greeter.setProvider(window.ethereum);
+      Binecone.setProvider(window.ethereum);
     })();
   }, []);
 
@@ -72,9 +75,38 @@ function App() {
     // Get input value of message
     var getMessage = document.getElementById("message").value;
     setLoading(true);
+
+
+    const wordIndices = words.reduce((acc, word, index) => {
+      acc[word] = index;
+      return acc;
+    }, {});
+
+    const embeddingLayer = tf.layers.embedding({
+      inputDim: words.length,
+      outputDim: 10,
+    });
+    
+    const messageIndex = tf.tensor1d([wordIndices[getMessage]], 'int32');
+    const messageEmbedding = embeddingLayer.apply(messageIndex);
+
+    // 텐서를 JavaScript 배열로 변환합니다.
+    const embeddingArray = messageEmbedding.arraySync();
+
+    // 배열을 사용하여 원하는 형식의 객체를 생성합니다.
+    const output = {
+      id: getMessage,
+      values: embeddingArray[0]
+    };
+
+    // 객체를 JSON 문자열로 변환합니다.
+    const outputJson = JSON.stringify(output);
+
+    console.log(outputJson);
+    
     // Send message to smart contract
     await contracts.methods
-      .write(getMessage)
+      .write(outputJson)
       .send({ from: accountAddress })
       .on("transactionHash", function (hash) {
         setTxnHash(hash);
@@ -130,7 +162,7 @@ function App() {
       <p className="text-center text-sm mt-6">
         {loading == true ? (
           <>
-            loading..
+            Upserting data to Vector database...
             <p className="mt-4 text-xs ">
               Txn hash:{" "}
               <a
