@@ -76,13 +76,6 @@ function App() {
     var getMessage = document.getElementById("message").value;
     setLoading(true);
 
-    const pinecone = require('pinecone-node');
-    pinecone.config.API_KEY = 'your-pinecone-api-key';
-  
-    const indexName = 'bc-index-ns1';
-    await pinecone.createIndex(indexName);
-  
-
     const wordIndices = words.reduce((acc, word, index) => {
       acc[word] = index;
       return acc;
@@ -99,7 +92,6 @@ function App() {
 
     const embeddingArray = messageEmbedding.arraySync();
 
-
     const output = {
       id: getMessage,
       values: embeddingArray[0]
@@ -108,8 +100,6 @@ function App() {
     const outputJson = JSON.stringify(output);
 
     console.log(outputJson);
-
-    await pinecone.upsert(indexName, outputJson);
     
     // Send message to smart contract
     await contracts.methods
