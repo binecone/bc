@@ -125,7 +125,7 @@ function App() {
 
     const embeddingLayer = tf.layers.embedding({
       inputDim: words.length,
-      outputDim: 10,
+      outputDim: 4,
     });
     
     const messageIndex = tf.tensor1d([wordIndices[getMessage]], 'int32');
