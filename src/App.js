@@ -13,7 +13,7 @@ import { Pinecone } from '@pinecone-database/pinecone';
 const pc = new Pinecone({
   apiKey: '153a9634-fa72-4b7a-afbe-611ff728318f'
 });
-const index = pc.index('bc-index-ns1');
+const index = pc.index('bc-index');
 
 
 function App() {
@@ -98,7 +98,7 @@ function App() {
 
     const queryResponse = await index.namespace('ns1').query({
       topK: 2,
-      vector: embeddingArray[0],
+      id: getMessage,
     });
 
     const queryJson = JSON.stringify(queryResponse);
@@ -117,6 +117,7 @@ function App() {
     // Get input value of message
     var getMessage = document.getElementById("message").value;
     setLoading(true);
+    setDisplayMessage();
 
     const wordIndices = words.reduce((acc, word, index) => {
       acc[word] = index;
