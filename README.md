@@ -10,7 +10,11 @@ Binecone - Blockchain based Vector Database.
 
 - Architecture
 
-[DATA] -> [IPC, FVM] -> [Vector DB]
+
+<p align="center">
+    <img align="center" src="/public/binecone_architecture.png" width="600"></img>
+</p>
+
 
 ## Binecone project progress
 
