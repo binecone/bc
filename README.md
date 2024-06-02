@@ -25,9 +25,9 @@ Binecone dApp with React & Hardhat to develop, deploy, and test Solidity smart c
 
 ## Quickstart
 
-<!-- <div align="center">
-  <img src="/demo.gif" />
-</div> -->
+<div align="center">
+  <img src="/binecone_demo.gif" />
+</div>
 
 ## Installation guide
 
