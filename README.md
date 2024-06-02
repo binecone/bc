@@ -14,7 +14,7 @@ Binecone - Blockchain based Vector Database.
 
 ## Binecone project progress
 
-- Idea concept -> Website -> FVM dapp -> Serverless cloud -> Basic Vector Database
+- Idea concept -> Website -> FVM dapp -> Serverless cloud -> Basic Vector Database -> Vector DB Connection -> Store -> Search
 
 - Service website is completed. 
   Please check [Binecone](https://binecone.com)
