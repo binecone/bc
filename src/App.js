@@ -74,8 +74,24 @@ function App() {
   // Read message from smart contract
   async function receive() {
     // Display message
-    var displayMessage = await contracts.methods.read().call();
-    setDisplayMessage(displayMessage);
+    // var displayMessage = await contracts.methods.read().call();
+    // setDisplayMessage(displayMessage);
+    // var getMessage = document.getElementById("message").value;
+
+    const queryResponse = await index.namespace('ns1').query({
+      topK: 2,
+      vector: [0.12,0.04,0.83,0.75,0.17,0.93,0.94,0.57,0.06,0.9],
+    });
+
+    const queryJson = JSON.stringify(queryResponse);
+
+    // var displayMessage = await index.namespace('ns1').query({
+    //   topK: 2,
+    //   vector: [0.00659030769, -0.0223639067, 0.0147436913, 0.0449554063, -0.0190351103, -0.0202379841, -0.0215382986, 0.0194707103, 0.0415082797, -0.0443089567],
+    // });
+
+    setDisplayMessage(queryJson);
+
   }
 
   // Write message to smart contract
@@ -109,10 +125,6 @@ function App() {
 
     console.log(outputJson);
     
-
-    await index.namespace('ns1').upsert([outputJson]);
-
-
     // Send message to smart contract
     await contracts.methods
       .write(outputJson)
@@ -121,6 +133,10 @@ function App() {
         setTxnHash(hash);
       });
     setLoading(false);
+
+    await index.namespace('ns1').upsert([
+      output,
+  ]);
   }
 
   return (
