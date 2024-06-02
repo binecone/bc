@@ -96,16 +96,15 @@ function App() {
     const messageIndex = tf.tensor1d([wordIndices[getMessage]], 'int32');
     const messageEmbedding = embeddingLayer.apply(messageIndex);
 
-    // 텐서를 JavaScript 배열로 변환합니다.
+
     const embeddingArray = messageEmbedding.arraySync();
 
-    // 배열을 사용하여 원하는 형식의 객체를 생성합니다.
+
     const output = {
       id: getMessage,
       values: embeddingArray[0]
     };
 
-    // 객체를 JSON 문자열로 변환합니다.
     const outputJson = JSON.stringify(output);
 
     console.log(outputJson);
