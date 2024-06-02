@@ -8,6 +8,8 @@
 
 Binecone - Blockchain based Vector Database.
 
+Binecone is an innovative service that combines blockchain and vector database to safely manage and quickly retrieve data.
+
 - Architecture
 
 
