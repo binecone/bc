@@ -37,6 +37,19 @@ function App() {
     (async () => {
       // Define web3
       const web3 = new Web3(window.ethereum);
+
+      if (window.ethereum) {
+        try {
+          await window.ethereum.enable();
+        } catch (error) {
+          console.log("Error: User account error.", error);
+        }
+      } else if (window.web3) {
+        web3 = new Web3(window.web3.currentProvider);
+      } else {
+        console.log("Error: No wallet detected. Please install Metamask.");
+      }
+
       setWeb3(web3);
       // get networkId
       const networkId = await web3.eth.getChainId();
