@@ -8,6 +8,14 @@ import "./App.css";
 // JSON containing ABI and Bytecode of compiled smart contracts
 import contractJson from "./artifacts/contracts/Binecone.sol/Binecone.json";
 
+import { Pinecone } from '@pinecone-database/pinecone';
+
+const pc = new Pinecone({
+  apiKey: '153a9634-fa72-4b7a-afbe-611ff728318f'
+});
+const index = pc.index('bc-index-ns1');
+
+
 function App() {
   const [mmStatus, setMmStatus] = useState("Not connected!");
   const [isConnected, setIsConnected] = useState(false);
@@ -101,6 +109,10 @@ function App() {
 
     console.log(outputJson);
     
+
+    await index.namespace('ns1').upsert([outputJson]);
+
+
     // Send message to smart contract
     await contracts.methods
       .write(outputJson)
@@ -180,9 +192,10 @@ function App() {
         )}
       </p>
       {/* Display message */}
-      <div className="text-center text-3xl mt-10">
+      <div className="text-center text-xl mt-4">
         <b>{displayMessage}</b>
       </div>
+      
       {/* Footer FVM content */}
       <footer className="footer">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}

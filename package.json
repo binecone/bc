@@ -24,7 +24,7 @@
     "tailwindcss"
   ],
   "dependencies": {
-    "@pinecone-database/pinecone": "^2.2.1",
+    "@pinecone-database/pinecone": "^2.2.2",
     "@tensorflow/tfjs": "^4.19.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
