@@ -23,7 +23,7 @@ Binecone - Blockchain based Vector Database.
 
 Binecone dApp with React & Hardhat to develop, deploy, and test Solidity smart contracts on the FEVM network.
 
-## Quickstart
+## Preview Demo
 
 <div align="center">
   <img src="/binecone_demo.gif" />
