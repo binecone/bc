@@ -2,7 +2,7 @@ import React from "react";
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Web3 from "web3";
-import logo from "./logo.png";
+import Binecone_Image from "./binecone_image.png";
 import "./App.css";
 // import { Web3Storage } from "web3.storage";
 // JSON containing ABI and Bytecode of compiled smart contracts
@@ -115,11 +115,6 @@ function App() {
     });
 
     const queryJson = JSON.stringify(queryResponse);
-
-    // var displayMessage = await index.namespace('ns1').query({
-    //   topK: 2,
-    //   vector: [0.00659030769, -0.0223639067, 0.0147436913, 0.0449554063, -0.0190351103, -0.0202379841, -0.0215382986, 0.0194707103, 0.0415082797, -0.0443089567],
-    // });
 
     setDisplayMessage(queryJson);
 
@@ -248,7 +243,7 @@ function App() {
       
       {/* Footer FVM content */}
       <footer className="footer">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <img src={Binecone_Image} className="" alt="Binecone Image" />
         <p className="mt-4 text-xs sm:text-sm text-black">
           Learn more about Binecone {""}
           <a
